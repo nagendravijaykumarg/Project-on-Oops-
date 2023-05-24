@@ -1,471 +1,475 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 class Patient {
 
-	private String name, gender, city, address, guardianname, guardianaddress,status;
-	private int age, patientid;
-	private long phonenumber, guardiansphonenumber, aadharnumber;
+    String name, gender, city, address, guardiansname, guardiansaddress, status;
+    int age, patientid;
+    long phonenumber, dateofadmisssion, guardiansphonenumber, aadhaarcardnumber;
 
-	
+    public String getName() {
+        return name;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getGender() {
+        return gender;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getCity() {
+        return city;
+    }
 
-	public String getGender() {
-		return gender;
-	}
+    public String getAddress() {
+        return address;
+    }
 
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
+    public String getGuardiasname() {
+        return guardiansname;
+    }
 
-	public String getCity() {
-		return city;
-	}
+    public String getGuardiansddress() {
+        return guardiansaddress;
+    }
 
-	public void setCity(String city) {
-		this.city = city;
-	}
+    public String getStatus() {
+        return status;
+    }
 
-	public String getAddress() {
-		return address;
-	}
+    public int getAge() {
+        return age;
+    }
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+    public int getPatientid() {
+        return patientid;
+    }
 
-	public String getGuardianname() {
-		return guardianname;
-	}
+    public long getPhonenumber() {
+        return phonenumber;
+    }
 
-	public void setGuardianname(String guardianname) {
-		this.guardianname = guardianname;
-	}
+    public long getDateofadmisssion() {
+        return dateofadmisssion;
+    }
 
-	public String getGuardianaddress() {
-		return guardianaddress;
-	}
+    public long getGuardiansphonenumber() {
+        return guardiansphonenumber;
+    }
 
-	public void setGuardianaddress(String guardianaddress) {
-		this.guardianaddress = guardianaddress;
-	}
+    public long getAadhaarcardnumber() {
+        return aadhaarcardnumber;
+    }
 
-	public int getAge() {
-		return age;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setAge(int age) {
-		this.age = age;
-	}
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
-	public int getPatientid() {
-		return patientid;
-	}
+    public void setCity(String city) {
+        this.city = city;
+    }
 
-	public void setPatientid(int patientid) {
-		this.patientid = patientid;
-	}
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-	public long getPhonenumber() {
-		return phonenumber;
-	}
+    public void setGuardiasname(String guardiasname) {
+        this.guardiansname = guardiasname;
+    }
 
-	public void setPhonenumber(long phonenumber) {
-		this.phonenumber = phonenumber;
-	}
+    public void setGuardiansddress(String guardiansddress) {
+        this.guardiansaddress = guardiansddress;
+    }
 
-	public long getGuardiansphonenumber() {
-		return guardiansphonenumber;
-	}
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
-	public void setGuardiansphonenumber(long guardiansphonenumber) {
-		this.guardiansphonenumber = guardiansphonenumber;
-	}
+    public void setAge(int age) {
+        this.age = age;
+    }
 
-	public long getAadharnumber() {
-		return aadharnumber;
-	}
+    public void setPatientid(int patientid) {
+        this.patientid = patientid;
+    }
 
-	public void setAadharnumber(long aadharnumber) {
-		this.aadharnumber = aadharnumber;
-	}
+    public void setPhonenumber(long phonenumber) {
+        this.phonenumber = phonenumber;
+    }
 
-	public String getStatus() {
-		return status;
-	}
+    public void setDateofadmisssion(long dateofadmisssion) {
+        this.dateofadmisssion = dateofadmisssion;
+    }
 
-	public void setStatus(String status) {
-		this.status = status;
-	}
-	
+    public void setGuardiansphonenumber(long guardiansphonenumber) {
+        this.guardiansphonenumber = guardiansphonenumber;
+    }
+
+    public void setAadhaarcardnumber(long aadhaarcardnumber) {
+        this.aadhaarcardnumber = aadhaarcardnumber;
+    }
 
 }
 
 class ArogyaHospitals {
-	ArrayList<Patient> al = new ArrayList<Patient>();
-	int count5=200;
+    ArrayList<Patient> al = new ArrayList<Patient>();
+    int count5 = 200;
 
-	public void addPatient(Scanner s, int p) {
-		
-		for (int i = 1; i <= p; i++) {
-			count5++;
-			Patient p1 = new Patient();
-			System.out.println("Patient Id is automatically generated");
-			p1.setPatientid(count5);
+    public void addPatient(Scanner s, int p) {
 
-			System.out.println("Enter his/her Name: ");
-			p1.setName(s.next());
+        for (int i = 1; i <= p; i++) {
+            count5++;
+            Patient p1 = new Patient();
+            System.out.println("Patient Id is automatically generated");
+            p1.setPatientid(count5);
 
-			do {
-				System.out.println("Enter Patient Age: ");
-				int a = s.nextInt();
-				if (a >= 1 && a <= 99) {
-					p1.setAge(a);
-					break;
-				} else {
-					System.out.println("Enter the age between 1 & 99 ");
-				}
-			} while (true);
+            System.out.println("Enter his/her Name: ");
+            p1.setName(s.next());
 
-			System.out.println("Enter gender of the patient: ");
-			p1.setGender(s.next());
+            do {
+                System.out.println("Enter Patient Age: ");
+                int a = s.nextInt();
+                if (a >= 1 && a <= 99) {
+                    p1.setAge(a);
+                    break;
+                } else {
+                    System.out.println("Enter the age between 1 & 99 ");
+                }
+            } while (true);
 
-			String input;
-			boolean valid = false;
-			int count = 0;
+            System.out.println("Enter gender of the patient: ");
+            p1.setGender(s.next());
 
-			do {
-				if (count == 0) {
-					s.nextLine();
-				}
-				System.out.println("Enter the Contact Number:");
-				input = s.nextLine();
+            String input;
+            boolean valid = false;
+            int count = 0;
 
-				if (input.length() == 10 && (input.charAt(0) == '6' || input.charAt(0) == '7' || input.charAt(0) == '8'
-						|| input.charAt(0) == '9')) {
-					boolean allDigits = true;
-					for (int j = 0; j < input.length(); j++) {
-						if (!Character.isDigit(input.charAt(j))) {
-							allDigits = false;
-							break;
-						}
-					}
-					if (allDigits) {
-						valid = true;
-					} else {
-						count++;
-						System.out.println("Invalid input. Please enter a valid 10-digit phone number.");
-					}
-				} else {
-					count++;
-					System.out.println("Please enter a valid 10-digit phone number starting with 6, 7, 8, or 9.");
-				}
-			} while (!valid);
+            do {
+                if (count == 0) {
+                    s.nextLine();
+                }
+                System.out.println("Enter the Contact Number:");
+                input = s.nextLine();
 
-			p1.setPhonenumber(Long.parseLong(input));
-			System.out.println("Enter the City name: ");
-			p1.setCity(s.next());
-			System.out.println("Enter the Address: ");
-			p1.setAddress(s.next());
-			System.out.println("Enter the guardians name: ");
-			p1.setGuardianname(s.next());
-			System.out.println("Enter the guardians address: ");
-			p1.setGuardianaddress(s.next());
-			String input2;
-			boolean valid2 = false;
-			int count1 = 0;
+                if (input.length() == 10 && (input.charAt(0) == '6' || input.charAt(0) == '7' || input.charAt(0) == '8'
+                        || input.charAt(0) == '9')) {
+                    boolean allDigits = true;
+                    for (int j = 0; j < input.length(); j++) {
+                        if (!Character.isDigit(input.charAt(j))) {
+                            allDigits = false;
+                            break;
+                        }
+                    }
+                    if (allDigits) {
+                        valid = true;
+                    } else {
+                        count++;
+                        System.out.println("Invalid input. Please enter a valid 10-digit phone number.");
+                    }
+                } else {
+                    count++;
+                    System.out.println("Please enter a valid 10-digit phone number starting with 6, 7, 8, or 9.");
+                }
+            } while (!valid);
 
-			do {
-				if (count1 == 0) {
-					s.nextLine();
-				}
+            p1.setPhonenumber(Long.parseLong(input));
+            System.out.println("Enter the City name: ");
+            p1.setCity(s.next());
+            System.out.println("Enter the Address: ");
+            p1.setAddress(s.next());
+            System.out.println("Enter the guardians name: ");
+            p1.setGuardiasname(s.next());
+            System.out.println("Enter the guardians address: ");
+            p1.setGuardiansddress(s.next());
 
-				System.out.println("Enter the gurdian's Contact Number:");
-				input2 = s.nextLine();
+            String input2;
+            boolean valid2 = false;
+            int count1 = 0;
 
-				if (input2.length() == 10 && (input2.charAt(0) == '6' || input2.charAt(0) == '7'
-						|| input2.charAt(0) == '8' || input2.charAt(0) == '9')) {
-					boolean allDigits = true;
-					for (int l = 0; l < input.length(); l++) {
-						if (!Character.isDigit(input2.charAt(l))) {
-							allDigits = false;
-							break;
-						}
-					}
-					if (allDigits) {
-						valid2 = true;
-					} else {
-						count1++;
-						System.out.println("Invalid input. Please enter a valid 10-digit phone number.");
-					}
-				} else {
-					count1++;
-					System.out.println("Please enter a valid 10-digit phone number starting with 6, 7, 8, or 9.");
-				}
-			} while (!valid2);
-			p1.setGuardiansphonenumber(Long.parseLong(input2));
-			String input1;
-			boolean valid1 = false;
+            do {
+                if (count1 == 0) {
+                    s.nextLine();
+                }
 
-			do {
-				System.out.println("Enter the Patient Aadhar Number:");
-				input1 = s.nextLine();
+                System.out.println("Enter the gurdian's Contact Number:");
+                input2 = s.nextLine();
 
-				if (input1.length() == 12) {
-					boolean allDigits = true;
-					for (int k = 0; k < input1.length(); k++) {
-						if (!Character.isDigit(input1.charAt(k))) {
-							allDigits = false;
-							break;
-						}
-					}
-					if (allDigits) {
-						valid1 = true;
-					} else {
-						System.out.println("Invalid input. Please enter a valid 12-digit Aadhar number.");
-					}
-				} else {
-					System.out.println(" Please enter a valid 12-digit Aadhar number ");
-				}
-			} while (!valid1);
-			p1.setAadharnumber(Long.parseLong(input1));
-			p1.setStatus("Not recovered");
-			al.add(p1);
+                if (input2.length() == 10 && (input2.charAt(0) == '6' || input2.charAt(0) == '7'
+                        || input2.charAt(0) == '8' || input2.charAt(0) == '9')) {
+                    boolean allDigits = true;
+                    for (int l = 0; l < input.length(); l++) {
+                        if (!Character.isDigit(input2.charAt(l))) {
+                            allDigits = false;
+                            break;
+                        }
+                    }
+                    if (allDigits) {
+                        valid2 = true;
+                    } else {
+                        count1++;
+                        System.out.println("Invalid input. Please enter a valid 10-digit phone number.");
+                    }
+                } else {
+                    count1++;
+                    System.out.println("Please enter a valid 10-digit phone number starting with 6, 7, 8, or 9.");
+                }
+            } while (!valid2);
+            p1.setGuardiansphonenumber(Long.parseLong(input2));
+            String input1;
+            boolean valid1 = false;
 
-		}
-		
+            do {
+                System.out.println("Enter the Patient Aadhaarcard Number:");
+                input1 = s.nextLine();
 
-	}
+                if (input1.length() == 12) {
+                    boolean allDigits = true;
+                    for (int k = 0; k < input1.length(); k++) {
+                        if (!Character.isDigit(input1.charAt(k))) {
+                            allDigits = false;
+                            break;
+                        }
+                    }
+                    if (allDigits) {
+                        valid1 = true;
+                    } else {
+                        System.out.println("Invalid input. Please enter a valid 12-digit Aadhar number.");
+                    }
+                } else {
+                    System.out.println(" Please enter a valid 12-digit Aadhar number ");
+                }
+            } while (!valid1);
+            p1.setAadhaarcardnumber(Long.parseLong(input1));
+            p1.setStatus("Not recovered");
+            al.add(p1);
 
-	public void searchById(Scanner s, int id) {
-		int count = 0;
-		for (int i = 0; i < al.size(); i++) {
-			if (id == al.get(i).getPatientid()) {
-				getIn(i);
-				count++;
+        }
 
-			}
-		}
-		if (count == 0) {
-			System.out.println("Patient details not found.");
-		}
-	}
+    }
 
-	public void searchByCity(Scanner s, String s1) {
-		int count2 = 0;
-		try {
-			if (al.size() <= 0) {
-				System.out.println("Patient list is Empty.");
-				return;
-			}
+    public void searchById(Scanner s, int id) {
+        int count = 0;
+        for (int i = 0; i < al.size(); i++) {
+            if (id == al.get(i).getPatientid()) {
+                getIn(i);
+                count++;
 
-			for (int i = 0; i < al.size(); i++) {
+            }
+        }
+        if (count == 0) {
+            System.out.println("Patient details not found.");
+        }
+    }
 
-				if (al.get(i) == null) {
-					System.out.println("Patient at index " + i + " is null.");
-					continue;
-				}
+    public void searchByCity(Scanner s, String s1) {
+        int count2 = 0;
+        try {
+            if (al.size() <= 0) {
+                System.out.println("Patient list is Empty.");
+                return;
+            }
 
-				if (s1.equalsIgnoreCase(al.get(i).getCity())) {
-					getIn(i);
-					count2++;
-				}
+            for (int i = 0; i < al.size(); i++) {
 
-			}
-			if (count2 == 0) {
-				System.out.println("Entered City name is incorrect");
-			}
-		} catch (NullPointerException e) {
-			System.out.println("Null pointer exception: " + e.getMessage());
-		} catch (Exception e) {
-			System.out.println("Exception occurred: " + e.getMessage());
-		}
-	}
+                if (al.get(i) == null) {
+                    System.out.println("Patient at index " + i + " is null.");
+                    continue;
+                }
 
-	public void display(Patient p) {
-		System.out.println("Patient Name :" + p.getName());
-		System.out.println("Patient ID :" + p.getPatientid());
-		System.out.println("Patient Age :" + p.getAge());
-		System.out.println("Patient Gender :" + p.getGender());
-		System.out.println("Patient PhoneNumber :" + p.getPhonenumber());
-		System.out.println("Patient City :" + p.getCity());
-		System.out.println("Patient Address :" + p.getAddress());
-		System.out.println("Patient Guardian Name :" + p.getGuardianname());
-		System.out.println("Patient Guardian Address :" + p.getGuardianaddress());
-		System.out.println("Patient Guardian PhoneNumber :" + p.getGuardiansphonenumber());
-		System.out.println("Patient AadharNumber :" + p.getAadharnumber());
-		System.out.println("Patient Status :"+p.getStatus());
+                if (s1.equalsIgnoreCase(al.get(i).getCity())) {
+                    getIn(i);
+                    count2++;
+                }
 
-	}
+            }
+            if (count2 == 0) {
+                System.out.println("Entered City name is incorrect");
+            }
+        } catch (NullPointerException e) {
+            System.out.println("Null pointer exception: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Exception occurred: " + e.getMessage());
+        }
+    }
 
-	public void searchByAge(Scanner s, int a1, int a2) {
-		int count3 = 0;
-		try {
+    public void display(Patient p) {
+        System.out.println("Patient Name :" + p.getName());
+        System.out.println("Patient ID :" + p.getPatientid());
+        System.out.println("Patient Age :" + p.getAge());
+        System.out.println("Patient Gender :" + p.getGender());
+        System.out.println("Patient PhoneNumber :" + p.getPhonenumber());
+        System.out.println("Patient City :" + p.getCity());
+        System.out.println("Patient Address :" + p.getAddress());
+        System.out.println("Patient Guardian Name :" + p.getGuardiasname());
+        System.out.println("Patient Guardian Address :" + p.getGuardiansddress());
+        System.out.println("Patient Guardian PhoneNumber :" + p.getGuardiansphonenumber());
+        System.out.println("Patient AadharNumber :" + p.getAadhaarcardnumber());
+        System.out.println("Patient Status :" + p.getStatus());
 
-			for (int i = 0; i < al.size(); i++) {
-				if (al.get(i).getAge() >= a1 && al.get(i).getAge() <= a2) {
-					Patient p = al.get(i);
-					display(p);
-					count3++;
-				}
-			}
-			if (count3 == 0) {
-				System.out.println("Patient details not found in between these ages ");
-			}
-		} catch (Exception e) {
-			System.out.println(e);
-		}
-	}
+    }
 
-	public void removeById(Scanner s, int id1) {
+    public void searchByAge(Scanner s, int a1, int a2) {
+        int count3 = 0;
+        try {
 
-		al.remove(id1 - 1);
-		System.out.println("Patient details are removed.");
-	}
+            for (int i = 0; i < al.size(); i++) {
+                if (al.get(i).getAge() >= a1 && al.get(i).getAge() <= a2) {
+                    Patient p = al.get(i);
+                    display(p);
+                    count3++;
+                }
+            }
+            if (count3 == 0) {
+                System.out.println("Patient details not found in between these ages ");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
 
-	public void getIn(int j) {
+    public void removeById(Scanner s, int id1) {
 
-		for (int i = j; i < al.size(); i++) {
-			System.out.println("Patient Name :" + al.get(i).getName());
-			System.out.println("Patient ID :" + al.get(i).getPatientid());
-			System.out.println("Patient Age :" + al.get(i).getAge());
-			System.out.println("Patient Gender :" + al.get(i).getGender());
-			System.out.println("Patient PhoneNumber :" + al.get(i).getPhonenumber());
-			System.out.println("Patient City :" + al.get(i).getCity());
-			System.out.println("Patient Address :" + al.get(i).getAddress());
-			System.out.println("Patient Guardian Name :" + al.get(i).getGuardianname());
-			System.out.println("Patient Guardian Address :" + al.get(i).getGuardianaddress());
-			System.out.println("Patient Guardian PhoneNumber :" + al.get(i).getGuardiansphonenumber());
-			System.out.println("Patient AadharNumber :" + al.get(i).getAadharnumber());
-			System.out.println("Patient Status :"+al.get(i).getStatus());
-			break;
+        al.remove(id1 - 1);
+        System.out.println("Patient details are removed.");
+    }
 
-		}
-	}
+    public void getIn(int j) {
 
-	public void getAll() {
-		for (int i = 0; i < al.size(); i++) {
-			System.out.println("Patient Name :" + al.get(i).getName());
-			System.out.println("Patient ID :" + al.get(i).getPatientid());
-			System.out.println("Patient Age :" + al.get(i).getAge());
-			System.out.println("Patient Gender :" + al.get(i).getGender());
-			System.out.println("Patient PhoneNumber :" + al.get(i).getPhonenumber());
-			System.out.println("Patient City :" + al.get(i).getCity());
-			System.out.println("Patient Address :" + al.get(i).getAddress());
-			System.out.println("Patient Guardian Name :" + al.get(i).getGuardianname());
-			System.out.println("Patient Guardian Address :" + al.get(i).getGuardianaddress());
-			System.out.println("Patient Guardian PhoneNumber :" + al.get(i).getGuardiansphonenumber());
-			System.out.println("Patient AadharNumber :" + al.get(i).getAadharnumber());
-			System.out.println("Patient Status :"+al.get(i).getStatus());
+        for (int i = j; i < al.size(); i++) {
+            System.out.println("Patient Name :" + al.get(i).getName());
+            System.out.println("Patient Unique ID :" + al.get(i).getPatientid());
+            System.out.println("Patient Age :" + al.get(i).getAge());
+            System.out.println("Patient Gender :" + al.get(i).getGender());
+            System.out.println("Patient PhoneNumber :" + al.get(i).getPhonenumber());
+            System.out.println("Patient City :" + al.get(i).getCity());
+            System.out.println("Patient Address :" + al.get(i).getAddress());
+            System.out.println("Patient Guardian's Name :" + al.get(i).getGuardiasname());
+            System.out.println("Patient Guardian's Address :" + al.get(i).getGuardiansddress());
+            System.out.println("Patient Guardian's PhoneNumber :" + al.get(i).getGuardiansphonenumber());
+            System.out.println("Patient AadhaarNumber :" + al.get(i).getAadhaarcardnumber());
+            System.out.println("Patient Status :" + al.get(i).getStatus());
+            break;
 
-		}
-	}
-	
-	public void markRecovery(int id2,Scanner s) {
-		for (int i = 0; i < al.size(); i++) {
-			if(id2==al.get(i).getPatientid()) {
-				System.out.println("Patient Name :" + al.get(i).getName()+" is recovered.");
-				al.get(i).setStatus("Recovered");
-			}	
-			
-		}
-	}
+        }
+    }
 
-	public void viewOptions(Scanner s) {
-		while (true) {
-			System.out.println();
-			System.out.println("========Welcome to AROGYA HOSPITALS========");
-			System.out.println("1. Add Patient Details");
-			System.out.println("2. Search by using PatientID");
-			System.out.println("3. Search by using City Name");
-			System.out.println("4. Search by using Patient Age");
-			System.out.println("5. Remove by using PatientID");
-			System.out.println("6. Display all the patient details");
-			System.out.println("7. Mark Patient as recovered based on ID");
-			System.out.println("0. EXIT");
-			System.out.println("Choose your option");
-			int option = s.nextInt();
-			System.out.println();
+    public void getAll() {
+        for (int i = 0; i < al.size(); i++) {
+            System.out.println("Patient Name :" + al.get(i).getName());
+            System.out.println("Patient ID :" + al.get(i).getPatientid());
+            System.out.println("Patient Age :" + al.get(i).getAge());
+            System.out.println("Patient Gender :" + al.get(i).getGender());
+            System.out.println("Patient PhoneNumber :" + al.get(i).getPhonenumber());
+            System.out.println("Patient City :" + al.get(i).getCity());
+            System.out.println("Patient Address :" + al.get(i).getAddress());
+            System.out.println("Patient Guardian Name :" + al.get(i).getGuardiasname());
+            System.out.println("Patient Guardian Address :" + al.get(i).getGuardiansddress());
+            System.out.println("Patient Guardian PhoneNumber :" + al.get(i).getGuardiansphonenumber());
+            System.out.println("Patient AadharNumber :" + al.get(i).getAadhaarcardnumber());
+            System.out.println("Patient Status :" + al.get(i).getStatus());
 
-			switch (option) {
-			case 1: {
-				System.out.println("Enter How many patient details you want to store: ");
-				int p = s.nextInt();
-				addPatient(s, p);
+        }
+    }
 
-				break;
-			}
-			case 2: {
-				System.out.println("Enter the Patient ID: ");
-				int id = s.nextInt();
-				searchById(s, id);
-				break;
+    public void markRecovery(int id2, Scanner s) {
+        for (int i = 0; i < al.size(); i++) {
+            if (id2 == al.get(i).getPatientid()) {
+                System.out.println("Patient Name :" + al.get(i).getName() + " is recovered.");
+                al.get(i).setStatus("Recovered");
+            }
 
-			}
-			case 3: {
-				System.out.println("Enter the Patient city name: ");
-				String s1 = s.next();
-				searchByCity(s, s1);
-				break;
-			}
-			case 4: {
-				System.out.println("Enter the Age of patient:");
-				int a1 = s.nextInt();
-				System.out.println("Enter the another age of patient:");
-				int a2 = s.nextInt();
-				searchByAge(s, a1, a2);
-				break;
-			}
-			case 5: {
-				System.out.println("Enter the PatientID: ");
-				int id1 = s.nextInt();
-				removeById(s, id1);
-				break;
-			}
-			case 6: {
-				System.out.println("Displaying all the Patient Details ");
-				getAll();
-				break;
-			}
-			case 7:{
-				System.out.println("Enter the patient ID:");
-				int id2=s.nextInt();
-				markRecovery(id2,s);
-				break;
-			}
-			case 0: {
-				System.out.println("**************");
-				System.out.println("Thanks for using Arogya Hospitals portal");
-				System.out.println();
-				System.out.println("            PLEASE VISIT AGAIN          ");
-				System.out.println("**************");
-				System.exit(0);
-				break;
-			}
-			default: {
-				System.out.println("Invalid Input");
-			}
-				System.out.println("***********");
-			}
-		}
-	}
+        }
+    }
+
+    public void viewOptions(Scanner s) {
+        while (true) {
+            System.out.println();
+            System.out.println("========Welcome to AROGYA HOSPITALS========");
+            System.out.println("1. Add Patient Details");
+            System.out.println("2. Search by using Patients UniqueID");
+            System.out.println("3. Search by using City Name");
+            System.out.println("4. Search by using Patient Age");
+            System.out.println("5. Remove by using UniqueID");
+            System.out.println("6. Display all the patient details");
+            System.out.println("7. Mark the recovered patient based on UniqueID");
+            System.out.println("0. EXIT");
+            System.out.println("Choose your option");
+            int option = s.nextInt();
+            System.out.println();
+
+            switch (option) {
+                case 1: {
+                    System.out.println("Enter How many patient details you want to store: ");
+                    int p = s.nextInt();
+                    addPatient(s, p);
+
+                    break;
+                }
+                case 2: {
+                    System.out.println("Enter the Patient ID: ");
+                    int id = s.nextInt();
+                    searchById(s, id);
+                    break;
+
+                }
+                case 3: {
+                    System.out.println("Enter the Patient city name: ");
+                    String s1 = s.next();
+                    searchByCity(s, s1);
+                    break;
+                }
+                case 4: {
+                    System.out.println("Enter the Age of patient:");
+                    int a1 = s.nextInt();
+                    System.out.println("Enter the another age of patient:");
+                    int a2 = s.nextInt();
+                    searchByAge(s, a1, a2);
+                    break;
+                }
+                case 5: {
+                    System.out.println("Enter the PatientID: ");
+                    int id1 = s.nextInt();
+                    removeById(s, id1);
+                    break;
+                }
+                case 6: {
+                    System.out.println("Displaying all the Patient Details ");
+                    getAll();
+                    break;
+                }
+                case 7: {
+                    System.out.println("Enter the patient ID:");
+                    int id2 = s.nextInt();
+                    markRecovery(id2, s);
+                    break;
+                }
+                case 0: {
+                    System.out.println("**************");
+                    System.out.println("Thanks for using Arogya Hospitals portal");
+                    System.out.println();
+                    System.out.println("            PLEASE VISIT AGAIN          ");
+                    System.out.println("**************");
+                    System.exit(0);
+                    break;
+                }
+                default: {
+                    System.out.println("Invalid Input");
+                }
+                    System.out.println("***********");
+            }
+        }
+    }
 }
 
-public class HospitalApp {
+public class Miniproject {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Scanner s = new Scanner(System.in);
-		ArogyaHospitals ah = new ArogyaHospitals();
-		ah.viewOptions(s);
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        Scanner s = new Scanner(System.in);
+        ArogyaHospitals ah = new ArogyaHospitals();
+        ah.viewOptions(s);
 
-	}
+    }
 
 }

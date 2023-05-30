@@ -1,113 +1,108 @@
-import java.util.*;
+package Miniproject;
+
+import java.util.ArrayList;
+import java.util.Scanner;
 
 class Patient {
 
-    String name, gender, city, address, guardiansname, guardiansaddress, status;
-    int age, patientid;
-    long phonenumber, dateofadmisssion, guardiansphonenumber, aadhaarcardnumber;
+    private String name, gender, city, address, guardianname, guardianaddress, status;
+    private int age, patientid;
+    private long phonenumber, guardiansphonenumber, aadharnumber;
 
     public String getName() {
         return name;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public String getGuardiasname() {
-        return guardiansname;
-    }
-
-    public String getGuardiansddress() {
-        return guardiansaddress;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public int getPatientid() {
-        return patientid;
-    }
-
-    public long getPhonenumber() {
-        return phonenumber;
-    }
-
-    public long getDateofadmisssion() {
-        return dateofadmisssion;
-    }
-
-    public long getGuardiansphonenumber() {
-        return guardiansphonenumber;
-    }
-
-    public long getAadhaarcardnumber() {
-        return aadhaarcardnumber;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
+    public String getGender() {
+        return gender;
+    }
+
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public String getCity() {
+        return city;
     }
 
     public void setCity(String city) {
         this.city = city;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
     public void setAddress(String address) {
         this.address = address;
     }
 
-    public void setGuardiasname(String guardiasname) {
-        this.guardiansname = guardiasname;
+    public String getGuardianname() {
+        return guardianname;
     }
 
-    public void setGuardiansddress(String guardiansddress) {
-        this.guardiansaddress = guardiansddress;
+    public void setGuardianname(String guardianname) {
+        this.guardianname = guardianname;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public String getGuardianaddress() {
+        return guardianaddress;
+    }
+
+    public void setGuardianaddress(String guardianaddress) {
+        this.guardianaddress = guardianaddress;
+    }
+
+    public int getAge() {
+        return age;
     }
 
     public void setAge(int age) {
         this.age = age;
     }
 
+    public int getPatientid() {
+        return patientid;
+    }
+
     public void setPatientid(int patientid) {
         this.patientid = patientid;
+    }
+
+    public long getPhonenumber() {
+        return phonenumber;
     }
 
     public void setPhonenumber(long phonenumber) {
         this.phonenumber = phonenumber;
     }
 
-    public void setDateofadmisssion(long dateofadmisssion) {
-        this.dateofadmisssion = dateofadmisssion;
+    public long getGuardiansphonenumber() {
+        return guardiansphonenumber;
     }
 
     public void setGuardiansphonenumber(long guardiansphonenumber) {
         this.guardiansphonenumber = guardiansphonenumber;
     }
 
-    public void setAadhaarcardnumber(long aadhaarcardnumber) {
-        this.aadhaarcardnumber = aadhaarcardnumber;
+    public long getAadharnumber() {
+        return aadharnumber;
+    }
+
+    public void setAadharnumber(long aadharnumber) {
+        this.aadharnumber = aadharnumber;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
 }
@@ -179,10 +174,9 @@ class ArogyaHospitals {
             System.out.println("Enter the Address: ");
             p1.setAddress(s.next());
             System.out.println("Enter the guardians name: ");
-            p1.setGuardiasname(s.next());
+            p1.setGuardianname(s.next());
             System.out.println("Enter the guardians address: ");
-            p1.setGuardiansddress(s.next());
-
+            p1.setGuardianaddress(s.next());
             String input2;
             boolean valid2 = false;
             int count1 = 0;
@@ -220,7 +214,7 @@ class ArogyaHospitals {
             boolean valid1 = false;
 
             do {
-                System.out.println("Enter the Patient Aadhaarcard Number:");
+                System.out.println("Enter the Patient Aadhaar Number:");
                 input1 = s.nextLine();
 
                 if (input1.length() == 12) {
@@ -240,7 +234,7 @@ class ArogyaHospitals {
                     System.out.println(" Please enter a valid 12-digit Aadhar number ");
                 }
             } while (!valid1);
-            p1.setAadhaarcardnumber(Long.parseLong(input1));
+            p1.setAadharnumber(Long.parseLong(input1));
             p1.setStatus("Not recovered");
             al.add(p1);
 
@@ -295,16 +289,16 @@ class ArogyaHospitals {
 
     public void display(Patient p) {
         System.out.println("Patient Name :" + p.getName());
-        System.out.println("Patient ID :" + p.getPatientid());
+        System.out.println("Patient UniqueID :" + p.getPatientid());
         System.out.println("Patient Age :" + p.getAge());
         System.out.println("Patient Gender :" + p.getGender());
         System.out.println("Patient PhoneNumber :" + p.getPhonenumber());
         System.out.println("Patient City :" + p.getCity());
         System.out.println("Patient Address :" + p.getAddress());
-        System.out.println("Patient Guardian Name :" + p.getGuardiasname());
-        System.out.println("Patient Guardian Address :" + p.getGuardiansddress());
+        System.out.println("Patient Guardian Name :" + p.getGuardianname());
+        System.out.println("Patient Guardian Address :" + p.getGuardianaddress());
         System.out.println("Patient Guardian PhoneNumber :" + p.getGuardiansphonenumber());
-        System.out.println("Patient AadharNumber :" + p.getAadhaarcardnumber());
+        System.out.println("Patient AadharNumber :" + p.getAadharnumber());
         System.out.println("Patient Status :" + p.getStatus());
 
     }
@@ -329,25 +323,36 @@ class ArogyaHospitals {
     }
 
     public void removeById(Scanner s, int id1) {
+        int index = -1;
+        for (int i = 0; i < al.size(); i++) {
+            if (id1 == al.get(i).getPatientid()) {
+                index = i;
+                break;
+            }
+        }
 
-        al.remove(id1 - 1);
-        System.out.println("Patient details are removed.");
+        if (index != -1) {
+            al.remove(index);
+            System.out.println("Patient details have been removed.");
+        } else {
+            System.out.println("Invalid ID. No patient found with the given ID.");
+        }
     }
 
     public void getIn(int j) {
 
         for (int i = j; i < al.size(); i++) {
             System.out.println("Patient Name :" + al.get(i).getName());
-            System.out.println("Patient Unique ID :" + al.get(i).getPatientid());
+            System.out.println("Patient UniqueID :" + al.get(i).getPatientid());
             System.out.println("Patient Age :" + al.get(i).getAge());
             System.out.println("Patient Gender :" + al.get(i).getGender());
             System.out.println("Patient PhoneNumber :" + al.get(i).getPhonenumber());
             System.out.println("Patient City :" + al.get(i).getCity());
             System.out.println("Patient Address :" + al.get(i).getAddress());
-            System.out.println("Patient Guardian's Name :" + al.get(i).getGuardiasname());
-            System.out.println("Patient Guardian's Address :" + al.get(i).getGuardiansddress());
-            System.out.println("Patient Guardian's PhoneNumber :" + al.get(i).getGuardiansphonenumber());
-            System.out.println("Patient AadhaarNumber :" + al.get(i).getAadhaarcardnumber());
+            System.out.println("Patient Guardian Name :" + al.get(i).getGuardianname());
+            System.out.println("Patient Guardian Address :" + al.get(i).getGuardianaddress());
+            System.out.println("Patient Guardian PhoneNumber :" + al.get(i).getGuardiansphonenumber());
+            System.out.println("Patient AadharNumber :" + al.get(i).getAadharnumber());
             System.out.println("Patient Status :" + al.get(i).getStatus());
             break;
 
@@ -357,16 +362,16 @@ class ArogyaHospitals {
     public void getAll() {
         for (int i = 0; i < al.size(); i++) {
             System.out.println("Patient Name :" + al.get(i).getName());
-            System.out.println("Patient ID :" + al.get(i).getPatientid());
+            System.out.println("Patient UniqueID :" + al.get(i).getPatientid());
             System.out.println("Patient Age :" + al.get(i).getAge());
             System.out.println("Patient Gender :" + al.get(i).getGender());
             System.out.println("Patient PhoneNumber :" + al.get(i).getPhonenumber());
             System.out.println("Patient City :" + al.get(i).getCity());
             System.out.println("Patient Address :" + al.get(i).getAddress());
-            System.out.println("Patient Guardian Name :" + al.get(i).getGuardiasname());
-            System.out.println("Patient Guardian Address :" + al.get(i).getGuardiansddress());
+            System.out.println("Patient Guardian Name :" + al.get(i).getGuardianname());
+            System.out.println("Patient Guardian Address :" + al.get(i).getGuardianaddress());
             System.out.println("Patient Guardian PhoneNumber :" + al.get(i).getGuardiansphonenumber());
-            System.out.println("Patient AadharNumber :" + al.get(i).getAadhaarcardnumber());
+            System.out.println("Patient AadharNumber :" + al.get(i).getAadharnumber());
             System.out.println("Patient Status :" + al.get(i).getStatus());
 
         }
@@ -385,14 +390,14 @@ class ArogyaHospitals {
     public void viewOptions(Scanner s) {
         while (true) {
             System.out.println();
-            System.out.println("========Welcome to AROGYA HOSPITALS========");
+            System.out.println("========>>>>>>>>> Welcome to AROGYA HOSPITALS <<<<<<<<========");
             System.out.println("1. Add Patient Details");
-            System.out.println("2. Search by using Patients UniqueID");
-            System.out.println("3. Search by using City Name");
-            System.out.println("4. Search by using Patient Age");
-            System.out.println("5. Remove by using UniqueID");
+            System.out.println("2. Search the Patient by using Patient UniqueID");
+            System.out.println("3. Search the Patient by using City Name");
+            System.out.println("4. Search the Patient by using Patient Age");
+            System.out.println("5. Remove the Patient by using Patient UniqueID");
             System.out.println("6. Display all the patient details");
-            System.out.println("7. Mark the recovered patient based on UniqueID");
+            System.out.println("7. Mark the Patient as recovered based on UniqueID");
             System.out.println("0. EXIT");
             System.out.println("Choose your option");
             int option = s.nextInt();
@@ -445,11 +450,11 @@ class ArogyaHospitals {
                     break;
                 }
                 case 0: {
-                    System.out.println("**************");
+                    System.out.println("********>>>>>>>>>><<<<<<<<<<******");
                     System.out.println("Thanks for using Arogya Hospitals portal");
                     System.out.println();
                     System.out.println("            PLEASE VISIT AGAIN          ");
-                    System.out.println("**************");
+                    System.out.println(">>>>>>>>>><<<<<<<<<<");
                     System.exit(0);
                     break;
                 }
